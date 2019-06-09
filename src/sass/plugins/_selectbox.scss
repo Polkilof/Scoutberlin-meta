@@ -1,0 +1,112 @@
+.selectbox {
+  position: relative;
+
+  select {
+    display: none !important;
+  }
+
+  &--selected {
+    display: block;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    cursor: pointer;
+    user-select: none;
+
+    &:after {
+      width: 8px;
+      height: 8px;
+      border: 1px solid transparent;
+      border-left-color: #666666;
+      border-bottom-color: #666666;
+      transform: rotate(-45deg);
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      margin-top: -4px;
+      transform-origin: center center;
+    }
+
+    &.active:after {
+      border-color: transparent;
+      border-right-color: #666666;
+      border-top-color: #666666;
+      margin-top: 0;
+    }
+
+    &.active:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 100%;
+      margin-top: 4px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 5px 6px 5px;
+      border-color: transparent transparent #ffffff transparent;
+      z-index: 100;
+      left: 15px;
+    }
+
+    @include smallDown {
+      padding: 10px 15px;
+    }
+  }
+
+  &--items {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    margin-top: 10px;
+    padding: 10px 0;
+    box-shadow: 0 10px 20px rgba(#010101, 0.2);
+    z-index: 99;
+    max-height: 272px;
+    overflow-x: auto;
+
+    &.hide {
+      display: none;
+    }
+
+    div {
+      cursor: pointer;
+      user-select: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      line-height: 1;
+      color: #666666;
+
+      &:hover,
+      &.selected {
+        color: #1d7fe0;
+      }
+    }
+  }
+  &.totop .selectbox--selected.active:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -10px;
+    margin-top: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 5px 0 5px;
+    border-color: #ffffff transparent transparent transparent;
+  }
+  &.totop .selectbox--items {
+    top: auto;
+    bottom: 100%;
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    &:before {
+      display: none;
+    }
+  }
+}

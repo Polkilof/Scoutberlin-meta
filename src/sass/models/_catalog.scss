@@ -1,0 +1,745 @@
+.catalog {
+  &__featured {
+    &--item {
+      text-decoration: none;
+      display: block;
+      position: relative;
+      margin-bottom: 15px;
+      height: 100%;
+      min-height: 320px;
+
+      &:after {
+        content: '';
+        display: block;
+        width: 44px;
+        height: 44px;
+        position: absolute;
+        right: -2px;
+        top: -2px;
+        background: url(../img/featured.svg) no-repeat;
+        background-size: cover;
+      }
+
+      .image {
+        display: block;
+        overflow: hidden;
+        height: 100%;
+
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &:hover .image {
+        //background-color: #1d7fe0;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        transition: 0.25s linear;
+      }
+      &:hover img {
+        //opacity: 0.5;
+        //filter: grayscale(1);
+        //transform: scale(1.25)
+      }
+
+      .caption {
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 15px;
+        background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
+
+        &__title {
+          font-size: 24px;
+          color: #ffffff;
+          display: block;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        &__info {
+          display: flex;
+          align-items: center;
+        }
+
+        &__adress {
+          font-size: 16px;
+          color: #ffffff;
+          flex: 1;
+          display: block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        &__price {
+          font-size: 16px;
+          color: #ffffff;
+          padding-left: 15px;
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    padding: 15px 0 30px;
+
+    @include smallDown {
+      display: block;
+      text-align: center;
+    }
+
+    &--title {
+      display: block;
+      margin: 0;
+      padding: 0;
+      flex: 1;
+      font-size: 32px;
+      line-height: 1;
+
+      @include smallDown {
+        margin-bottom: 15px;
+      }
+    }
+
+    &--buttons {
+      font-size: 0;
+      white-space: nowrap;
+      flex: none;
+
+      a {
+        display: inline-block;
+        text-decoration: none;
+        margin-left: 30px;
+        color: #010101;
+        opacity: 0.6;
+
+        @include smallDown {
+          margin: 0 15px;
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+
+        &.active {
+          color: #1d7fe0;
+          opacity: 1;
+        }
+
+        svg {
+          display: block;
+          width: 16px;
+          height: 16px;
+          fill: currentColor;
+        }
+      }
+    }
+  }
+
+  &__grid {
+    &--item {
+      text-decoration: none;
+      display: block;
+      position: relative;
+      margin-bottom: 30px;
+
+      .image {
+        display: block;
+        overflow: hidden;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        transition: 0.25s linear;
+        transform: scale(1);
+      }
+      &:hover img {
+        //opacity: 0.5 !important;
+        //filter: grayscale(1);
+        //transform: scale(1.25)
+      }
+
+      .caption {
+        display: block;
+        background-color: #ffffff;
+        line-height: 1;
+        padding: 15px;
+
+        &__title {
+          font-size: 24px;
+          color: #010101;
+          display: block;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        &__info {
+          display: flex;
+          align-items: center;
+        }
+
+        &__adress {
+          font-size: 16px;
+          color: #666666;
+          flex: 1;
+          display: block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        &__price {
+          font-size: 16px;
+          color: #010101;
+          padding-left: 15px;
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+
+  &__list {
+    margin-bottom: 30px;
+    &--item {
+      background: #ffffff;
+      margin: 0 0 15px;
+
+      .item--image {
+        display: block;
+        overflow: hidden;
+        position: relative;
+        height: 100%;
+
+        img {
+          display: block;
+          margin: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .item--body {
+        padding: 30px 30px 30px 0;
+
+        @include mediumDown {
+          padding: 15px 30px 15px 0;
+        }
+
+        @include tabletDown {
+          padding: 15px 30px;
+        }
+
+        @include smallDown {
+          padding: 15px;
+        }
+      }
+
+      .item--header {
+        display: flex;
+        align-items: flex-start;
+
+        &__left {
+          display: block;
+          flex: 1;
+          margin: 0;
+          padding-right: 30px;
+          min-width: 0;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          .title {
+            font-size: 24px;
+            line-height: 1;
+            display: block;
+            a {
+              color: #010101;
+              text-decoration: none;
+              display: block;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+
+              &:hover {
+                color: #1d7fe0;
+              }
+            }
+          }
+
+          .adress {
+            font-size: 16px;
+
+            a {
+              color: #666666;
+              text-decoration: none;
+
+              &:hover {
+                color: #010101;
+              }
+            }
+          }
+        }
+
+        &__right {
+          flex: none;
+
+          .price {
+            color: #010101;
+            font-size: 24px;
+            line-height: 1;
+          }
+
+          .date {
+            white-space: nowrap;
+            font-size: 14px;
+            color: #cccccc;
+          }
+        }
+
+        @include smallDown {
+          display: block;
+
+          &__left {
+            padding-right: 0;
+
+            .title {
+              margin-bottom: 5px;
+            }
+            .adress {
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+
+      .item--intro {
+        padding-top: 15px;
+        font-size: 16px;
+        line-height: 21px;
+        max-height: 80px;
+        overflow: hidden;
+
+        p {
+          margin: 0;
+        }
+
+        @include mediumDown {
+          font-size: 14px;
+          padding-top: 5px;
+          max-height: 70px;
+        }
+
+        @include tabletDown {
+          font-size: 16px;
+          max-height: none;
+          padding-top: 15px;
+        }
+        @include smallDown {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  &__map {
+    padding: 10px;
+    background-color: #fff;
+    margin-bottom: 30px;
+
+    #map_view {
+      width: 100%;
+      height: 550px;
+
+      @include smallDown {
+        height: 300px;
+      }
+    }
+  }
+
+  &__viewed {
+    overflow: hidden;
+    padding-top: 15px;
+
+    h2 {
+      margin: 0 0 30px;
+      font-size: 24px;
+    }
+
+    .catalog__grid--item .image {
+      padding-top: 75%;
+
+      img {
+        display: none;
+      }
+    }
+
+    .catalog__grid--item .caption__price {
+      padding-left: 0;
+      padding-top: 5px;
+    }
+
+    &.top__error {
+      padding-top: 0;
+      margin-top: -53px;
+      margin-bottom: 60px;
+
+      @include tabletDown {
+        margin-top: 0;
+      }
+
+      .catalog__grid--item {
+        margin-bottom: 0;
+      }
+
+      a.btn.link {
+        padding: 15px 0;
+        color: #010101;
+
+        &:hover {
+          color: #1d7fe0;
+        }
+      }
+    }
+
+    // Сука блядь ебаный дизайнер что первый что второй
+    @include smallDown {
+      background-color: #ffffff;
+      padding-top: 20px;
+      margin-bottom: 30px;
+
+      &.nobg {
+        background-color: transparent;
+        [data-carousel='viewed']:after {
+          background-color: #f2f2f1;
+        }
+
+        .directory__item {
+          margin-bottom: 0;
+        }
+      }
+
+      &.top__error {
+        margin-bottom: 30px;
+        padding-top: 30px;
+        margin-top: -30px;
+        a.btn.link {
+          padding: 20px 0;
+        }
+      }
+      [data-carousel='viewed']:after {
+        background-color: #ffffff;
+      }
+
+      .catalog__grid--item .image {
+        padding-top: 112%;
+      }
+
+      .catalog__grid--item .caption {
+        position: absolute;
+        background-color: transparent;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        .caption__title,
+        .caption__price {
+          color: #ffffff;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__vip {
+    overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 15px;
+  }
+
+  &--item {
+    &__header {
+      font-size: 0;
+      margin-bottom: 15px;
+    }
+
+    &__title {
+      font-size: 32px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+      color: #010101;
+      padding-right: 30px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      margin-bottom: 5px;
+
+      @include smallDown {
+        padding-right: 0;
+        display: block;
+      }
+    }
+
+    &__info {
+      display: inline-block;
+      line-height: 1;
+      vertical-align: middle;
+      padding-top: 5px;
+      padding-bottom: 5px;
+
+      @include smallDown {
+        display: block;
+        width: 100%;
+      }
+
+      .adress,
+      .views,
+      .created,
+      .controls {
+        display: inline-block;
+        line-height: 1;
+        vertical-align: middle;
+        white-space: nowrap;
+        color: #666666;
+
+        span,
+        svg,
+        a {
+          display: inline-block;
+          line-height: 1;
+          vertical-align: middle;
+        }
+
+        svg {
+          width: 16px;
+          height: 16px;
+          fill: currentColor;
+        }
+
+        span {
+          font-size: 16px;
+          padding-left: 5px;
+        }
+      }
+
+      .adress,
+      .views,
+      .created {
+        padding-right: 30px;
+      }
+
+      .controls {
+        padding: 7px 0 7px 30px;
+        border-left: 1px solid #cccccc;
+        a {
+          color: #666666;
+          text-decoration: none;
+          margin-right: 30px;
+
+          &:hover {
+            color: #1d7fe0;
+          }
+          &.star {
+            svg {
+              fill: none;
+            }
+            &:hover svg {
+              fill: #f1cc1f !important;
+              color: #f1cc1f !important;
+            }
+          }
+        }
+
+        @include smallDown {
+          margin: 15px 0 0;
+          padding: 15px 0 0;
+          border: none;
+          border-top: 1px solid #cccccc;
+          display: block;
+        }
+      }
+    }
+
+    &__gallery {
+      margin-bottom: 21px;
+      position: relative;
+
+      .gallery__container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .map__container {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 2;
+        border: 1px solid #cccccc;
+        padding: 5px;
+
+        &.view {
+          display: block;
+          background-color: #ffffff;
+        }
+
+        #big_map {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    &__panel {
+      padding: 30px;
+      margin-bottom: 21px;
+      background-color: #ffffff;
+
+      .price {
+        color: #010101;
+        font-size: 32px;
+        line-height: 1;
+        margin-bottom: 30px;
+      }
+
+      .phone {
+        margin-bottom: 15px;
+
+        span {
+          display: inline-block;
+          font-size: 20px;
+          line-height: 1;
+          vertical-align: middle;
+          color: #1d7fe0;
+        }
+
+        a {
+          display: inline-block;
+          font-size: 12px;
+          line-height: 1;
+          vertical-align: middle;
+          text-transform: uppercase;
+          text-decoration: none;
+          color: #666666;
+          margin-left: 10px;
+          padding-top: 5px;
+
+          &:hover {
+            color: #010101;
+          }
+        }
+      }
+
+      .controls {
+        .social {
+          margin: 0;
+          padding: 15px 0;
+          list-style: none;
+          display: flex;
+          align-items: center;
+          font-size: 12px;
+          line-height: 1;
+          text-transform: uppercase;
+          color: #666666;
+
+          li {
+            display: block;
+            padding-right: 15px;
+
+            &:last-child {
+              padding-right: 0;
+            }
+
+            a {
+              display: block;
+              color: #666666;
+
+              &:hover {
+                color: #1d7fe0;
+              }
+
+              svg {
+                display: block;
+                width: 16px;
+                height: 16px;
+                fill: currentColor;
+              }
+            }
+          }
+        }
+      }
+
+      #small_map {
+        width: 100%;
+        height: 175px;
+      }
+
+      @include tablet {
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        padding: 15px;
+
+        .info {
+          display: block;
+          width: 50%;
+          padding-right: 15px;
+        }
+
+        .controls {
+          display: block;
+          width: 50%;
+          padding-left: 15px;
+
+          .social {
+            justify-content: center;
+          }
+        }
+
+        .map {
+          display: block;
+          width: 100%;
+          padding-top: 30px;
+        }
+      }
+
+      @include smallDown {
+        padding: 30px 15px 15px;
+
+        .price {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}
+.catalog--item__info .controls [data-add] {
+  svg {
+    fill: transparent;
+    stroke: currentColor;
+  }
+
+  &.added svg {
+    fill: #ffcc00;
+    stroke: #ffcc00;
+  }
+}

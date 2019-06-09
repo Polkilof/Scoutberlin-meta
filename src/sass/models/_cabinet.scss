@@ -1,0 +1,223 @@
+.cabinet {
+  &__header {
+    color: #010101;
+    font-size: 32px;
+    line-height: 1;
+    margin: 0 0 30px;
+  }
+
+  &__indexes {
+    padding: 30px 0;
+
+    @include smallDown {
+      padding-top: 0;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 30px;
+
+    &--header {
+      color: #010101;
+      font-size: 24px;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin-bottom: 10px;
+        font-size: 0;
+        line-height: 24px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        a {
+          text-decoration: none;
+          color: #666666;
+          display: inline-block;
+          min-height: 24px;
+
+          &:hover {
+            color: #1d7fe0;
+          }
+
+          span {
+            display: inline-block;
+            line-height: 1;
+            vertical-align: middle;
+            margin-right: 15px;
+            font-size: 18px;
+
+            &:last-child {
+              margin-right: 0;
+            }
+
+            &.counter {
+              color: #666666;
+              background-color: #ffffff;
+              border-radius: 4px;
+              font-size: 16px;
+              padding: 4px 0.5em;
+              height: 24px;
+              line-height: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__plan {
+    margin-bottom: 21px;
+    &--body {
+      background: #1d7fe0 url(../img/dots-white.png) repeat-x bottom center;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    &--title {
+      font-size: 24px;
+      line-height: 1;
+      margin: 0;
+      padding: 30px 0 60px;
+    }
+
+    &--counter {
+      font-size: 48px;
+      line-height: 1;
+      margin: 0;
+      padding: 0;
+    }
+
+    &--info {
+      font-size: 20px;
+      line-height: 1;
+      opacity: 0.6;
+      margin: 0;
+      padding: 10px 0 60px;
+    }
+
+    &--control {
+      background-color: #1d7fe0;
+    }
+  }
+
+  &__price {
+    margin-bottom: 21px;
+
+    &--body {
+      background: #ffffff url(../img/dots-grey.png) repeat-x bottom center;
+      color: #1d7fe0;
+      text-align: center;
+      transition: 0.25s ease-in-out;
+    }
+
+    &:hover &--body,
+    &.active &--body {
+      background: #1d7fe0 url(../img/dots-white.png) repeat-x bottom center;
+      color: #ffffff;
+    }
+
+    &--title {
+      font-size: 24px;
+      line-height: 1;
+      margin: 0;
+      padding: 30px 0 60px;
+    }
+
+    &--value {
+      font-size: 48px;
+      line-height: 1;
+      margin: 0;
+      padding: 0 0 90px;
+    }
+
+    &--img {
+      cursor: pointer;
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    &--control {
+      display: flex;
+      background-color: #1d7fe0;
+
+      .selectbox {
+        &--selected {
+          text-align: center;
+          padding-left: 0;
+
+          @include smallDown {
+            padding-top: 20px;
+            padding-bottom: 20px;
+          }
+        }
+      }
+
+      .selectbox,
+      .btn {
+        display: block;
+        flex: none;
+        width: 50%;
+      }
+
+      span.current {
+        display: block;
+        font-size: 12px;
+        line-height: 20px;
+        padding: 20px;
+        text-transform: uppercase;
+        user-select: none;
+        flex: none;
+        width: 100%;
+        text-align: center;
+        color: #666666;
+        background-color: #ffffff;
+      }
+    }
+
+    &--info {
+      margin-bottom: 21px;
+
+      @include smallDown {
+        margin-bottom: 20px;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+          border-bottom: 1px solid #ccc;
+          font-size: 16px;
+          line-height: 18px;
+          padding: 10px 0;
+          color: #666666;
+
+          strong {
+            font-weight: 400;
+            color: #010101;
+          }
+
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+
+    @include smallDown {
+      margin-bottom: 10px;
+    }
+  }
+}

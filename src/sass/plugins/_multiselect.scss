@@ -1,0 +1,157 @@
+.multiselect {
+  .fstElement {
+    position: relative;
+    width: 100%;
+    background: #ffffff url(../img/fstControls_h.png) no-repeat right center;
+
+    select {
+      display: none;
+    }
+
+    /*&:after {
+      width: 8px;
+      height: 8px;
+      border: 1px solid transparent;
+      border-left-color: #666666;
+      border-bottom-color:#666666;
+      transform: rotate(-45deg);
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      margin-top: -4px;
+      transform-origin: center center;
+    }*/
+
+    &.fstActive {
+      background: #ffffff url(../img/fstControls_o.png) no-repeat right center;
+    }
+
+
+    .fstControls {
+      min-height: 60px;
+      font-size: 0;
+      width: 100%;
+      padding: 10px 60px 0px 15px;
+      position: relative;
+      cursor: pointer;
+
+      .fstQueryInput {
+        width: 0 !important;
+        height: 0 !important;
+        position: absolute;
+        top: 0;
+        right: 0;
+        opacity: 0;
+      }
+
+      .fstChoiceItem {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 16px;
+        line-height: 20px;
+        background-color: #f2f2f1;
+        color: #666666;
+        cursor: default;
+        user-select: none;
+        padding: 10px 40px 10px 10px;
+        border-radius: 4px;
+        margin-right: 5px;
+        margin-bottom: 10px;
+        position: relative;
+
+        .fstChoiceRemove {
+          cursor: pointer;
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          border: none;
+          background-color: transparent;
+          color: #666666;
+          top: 50%;
+          right: 15px;
+          margin-top: -10px;
+
+          svg {
+            display: block;
+            width: 20px;
+            height: 20px;
+          }
+
+          &:hover {
+            color: #d8232a;
+          }
+        }
+      }
+
+    }
+
+    .fstResults {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: #ffffff;
+      margin-top: 10px;
+      padding: 10px 0;
+      box-shadow: 0 10px 20px rgba(#010101, .2);
+      z-index: 99;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -6px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 5px 6px 5px;
+        border-color: transparent transparent #ffffff transparent;
+        z-index: 66;
+        left: 15px;
+      }
+      .fstResultItem {
+        cursor: pointer;
+        user-select: none;
+        padding: 10px 15px;
+        font-size: 16px;
+        line-height: 1;
+        color: #666666;
+        display: block;
+  
+        &:hover {
+          color: #1d7fe0;
+        }
+
+        &.fstSelected {
+          cursor: default;
+          color: #cccccc;
+        }
+      }
+
+
+
+    }
+
+    &.fstActive .fstResults {
+      display: block;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  }
+}

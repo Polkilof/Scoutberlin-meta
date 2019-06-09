@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>ADD TITLE</title>
+    <link rel="stylesheet" href="css/print.min.css"/>
+  </head>
+  <body>
+    <div class="wraper">
+      <div class="wraper__header"><a href=""><img src="img/logo.png" alt=""/></a><span>Сайт объявлений в Германии</span></div>
+      <div class="article">
+        <div class="article__header">
+          <div class="row">
+            <div class="col">
+              <h1 class="article--title">Hyundai Tucson</h1>
+            </div>
+            <div class="col"><span class="article--phone">+434 234 XX XX</span></div>
+          </div>
+          <div class="row">
+            <div class="col"><span class="article--price">19 999 €</span><span class="article--date">Jun 18, 2018</span></div>
+            <div class="col article--adress">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 0A10 10 0 0 0 2 10c0 7.4 9.1 13.6 9.4 13.8l.6.2.6-.2c.3-.2 9.4-6.4 9.4-13.8A10 10 0 0 0 12 0zm0 21.8c-1.9-1.4-8-6.4-8-11.8 0-4.4 3.6-8 8-8s8 3.6 8 8c0 5.4-6.1 10.4-8 11.8z"></path>
+                <path d="M12 6c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"></path>
+              </svg><span>Bavaria, Motorstraße 225, 10293 Stuttgart</span>
+            </div>
+          </div>
+        </div>
+        <div class="article__info">
+          <div class="row">
+            <div class="col"><img src="img/gallery-item.jpg" alt=""/></div>
+            <div class="col">
+              <div id="map"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col__xs"><img src="img/gallery-item.jpg" alt=""/></div>
+            <div class="col__xs"><img src="img/gallery-item.jpg" alt=""/></div>
+            <div class="col__xs"><img src="img/gallery-item.jpg" alt=""/></div>
+          </div>
+        </div>
+        <div class="article__text">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
+        </div>
+      </div>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLa52E3EJeehDidU_gDBx4B4NMzh01hiY"></script>
+    <script>
+      var map_location = [48.8956712, 9.1656214];
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 16,
+        center: new google.maps.LatLng(map_location[0], map_location[1]),
+        disableDefaultUI: true
+      });
+      map_marker = new google.maps.Marker({
+        position: new google.maps.LatLng(map_location[0], map_location[1]),
+        map: map,
+        icon: {
+          url: "img/marker.png",
+          scaledSize: new google.maps.Size(40, 40)
+        }
+      });
+      map.addListener('center_changed', function () {
+        window.setTimeout(function () {
+          map.panTo(map_marker.getPosition());
+        }, 0);
+      });
+    </script>
+  </body>
+</html>

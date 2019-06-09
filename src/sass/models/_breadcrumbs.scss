@@ -1,0 +1,118 @@
+.breadcrumbs {
+  display: block;
+  margin-bottom: 15px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    li {
+      display: block;
+      color: #cccccc;
+      font-size: 16px;
+      padding: 5px 0;
+      position: relative;
+      margin: 0 20px 0 0;
+
+      a,
+      span {
+        display: block;
+        font-size: 16px;
+        line-height: 20px;
+        margin: 0;
+        padding: 0;
+        user-select: none;
+      }
+
+      a {
+        cursor: pointer;
+        text-decoration: none;
+        color: #666666;
+
+        &:hover {
+          color: #1d7fe0;
+        }
+      }
+
+      &:after {
+        display: block;
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        margin-top: -10px;
+        content: ' / ';
+        line-height: 20px;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+      }
+
+      &:last-child {
+        margin: 0;
+        &:after {
+          display: none;
+        }
+      }
+
+      &.dropdown {
+        position: relative;
+
+        .dropdown-backdrop {
+          position: absolute;
+          top: 100%;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 0 5px 6px 5px;
+          border-color: transparent transparent #ffffff transparent;
+          z-index: 66;
+          left: 15px;
+        }
+        .dropdown-menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: #ffffff;
+          z-index: 55;
+          margin-top: 6px;
+          box-shadow: 0 10px 20px rgba(#010101, 0.2);
+          padding: 10px 0;
+          display: none;
+          width: 280px;
+
+          li {
+            display: block;
+            padding: 0;
+            margin: 0;
+            &:after {
+              display: none;
+            }
+
+            a {
+              display: block;
+              font-size: 12px;
+              line-height: 20px;
+              text-transform: uppercase;
+              text-decoration: none;
+              color: #666666;
+              padding: 5px 20px;
+
+              &.active,
+              &:hover {
+                color: #1d7fe0;
+              }
+            }
+          }
+        }
+
+        &.open .dropdown-menu {
+          display: block;
+        }
+      }
+    }
+  }
+}

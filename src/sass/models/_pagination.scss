@@ -1,0 +1,58 @@
+.pagination {
+  margin-bottom: 30px;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+
+    li {
+      display: inline-block;
+      line-height: 1;
+      vertical-align: middle;
+      padding: 0 15px;
+
+      @include mediumDown {
+        padding: 0 5px;
+      }
+      @include smallDown {
+        padding: 0;
+      }
+
+      span, a {
+        display: block;
+        padding: 0 15px 5px;
+        user-select: none;
+        border-bottom: 2px solid transparent;
+        font-size: 16px;
+
+        @include smallDown {
+          padding: 0 8px 5px;
+        }
+
+        svg {
+          width: 20px;
+          height: 20px;
+          display: block;
+          fill: currentColor
+        }
+      }
+
+      a {
+        color: #666666;
+        text-decoration: none;
+
+        &:hover {
+          color: #010101;
+        }
+      }
+
+      &.current {
+        span {
+          border-bottom: 2px solid #010101;
+          color: #010101;
+        }
+      }
+    }
+  }
+}

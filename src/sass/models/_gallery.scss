@@ -1,0 +1,180 @@
+.gallery {
+  img {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  .item {
+    position: relative;
+    display: block !important;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+  &__container {
+    position: relative;
+
+    &--left {
+      margin-right: 150px;
+
+      [data-carousel='preview'] {
+        .item .play {
+          display: block;
+          position: absolute;
+          width: 60px;
+          height: 60px;
+          background-color: rgba(#1d7fe0, 0.6);
+          color: #fff;
+          padding: 18px;
+          border-radius: 100%;
+          top: 50%;
+          left: 50%;
+          margin-top: -30px;
+          margin-left: -30px;
+
+          svg {
+            display: block;
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+          }
+        }
+
+        .slick-arrow {
+          display: flex;
+          align-items: center;
+          position: absolute;
+          top: 0;
+          height: 100%;
+          padding: 5px;
+          background-color: rgba(#010101, 0.9);
+          color: #ffffff;
+          opacity: 0.5;
+          border: none;
+          z-index: 99;
+          cursor: pointer;
+
+          svg {
+            display: block;
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+          }
+
+          &:hover {
+            opacity: 1;
+          }
+
+          &.slick-prev {
+            left: 0;
+          }
+
+          &.slick-next {
+            right: 0;
+          }
+        }
+      }
+
+      @include smallDown {
+        margin-right: 0;
+      }
+    }
+
+    &--right {
+      position: absolute;
+      height: 100%;
+      width: 145px;
+      right: 0;
+      top: 0;
+
+      [data-carousel='nav'] {
+        height: 100%;
+        width: 145px;
+        font-size: 0;
+
+        .slick-arrow {
+          position: absolute;
+          display: block;
+          width: 100%;
+          cursor: pointer;
+          left: 0;
+          right: 0;
+          background-color: transparent;
+          border: none;
+          color: #ffffff;
+          z-index: 99;
+          opacity: 0.5;
+          padding: 5px;
+
+          &:hover {
+            opacity: 1;
+          }
+
+          svg {
+            display: block;
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+            margin: 0 auto;
+          }
+
+          &.slick-prev {
+            top: 0;
+          }
+
+          &.slick-next {
+            bottom: 0;
+          }
+        }
+
+        .slick-list {
+          //background-color: #010101;
+          height: 100% !important;
+          padding: 0 !important;
+        }
+
+        .slick-slide {
+          display: block !important;
+          width: 100% !important;
+          border: none !important;
+          background-color: #010101;
+
+          img {
+            opacity: 0.4;
+          }
+
+          &.slick-center img {
+            opacity: 1;
+          }
+        }
+        .item .play {
+          display: block;
+          position: absolute;
+          width: 40px;
+          height: 40px;
+          background-color: rgba(#1d7fe0, 0.6);
+          color: #fff;
+          padding: 12px;
+          border-radius: 100%;
+          top: 50%;
+          left: 50%;
+          margin-top: -20px;
+          margin-left: -20px;
+
+          svg {
+            display: block;
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+          }
+        }
+      }
+
+      @include smallDown {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+@charset "utf-8";
+@import 'lib/_normalize';
+@import 'lib/_grid.scss';
+@import 'lib/_global';
+
+@import 'plugins/_owl.carousel';
+@import 'plugins/_slick';
+@import 'plugins/_popup';
+@import 'plugins/_selectbox';
+@import 'plugins/_multiselect';
+@import 'plugins/_mCustomScrollbar';
+
+@import 'models/_header';
+@import 'models/_filters';
+@import 'models/_banners';
+@import 'models/_breadcrumbs';
+@import 'models/_pagination';
+@import 'models/_gallery';
+
+@import 'models/_catalog';
+@import 'models/_company';
+@import 'models/_cabinet';
+@import 'models/_profile';
+@import 'models/_basket';
+@import 'models/_buy';
+@import 'models/_create';
+@import 'models/_favorites';
+@import 'models/_contacts';
+@import 'models/_faq';
+@import 'models/_directory';
+@import 'models/_main__page';
+@import 'models/_crud';
+
+
+@import 'models/change-09-06-2019';
+
+.cookies__alert {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  z-index: 333;
+  width: 724px;
+  margin-left: -362px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 40px rgba(#000000, 0.1);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+
+  &--text {
+    display: block;
+    flex: 1;
+    padding-right: 20px;
+    font-size: 16px;
+    line-height: 1.2;
+    color: #666666;
+
+    a {
+      text-decoration: underline;
+      color: #1d7fe0;
+
+      &:hover {
+        color: #101010;
+      }
+    }
+  }
+
+  &--button {
+    flex: none;
+
+    .btn.blue {
+      display: block;
+      width: 100%;
+      height: 40px;
+      padding: 10px 30px;
+      span {
+        font-size: 16px;
+        text-transform: none;
+        font-weight: 400;
+      }
+    }
+  }
+
+  @include smallDown {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+  }
+
+  @media only screen and (max-width: 480px) {
+    display: block;
+
+    &--text {
+      padding: 0 0 20px;
+    }
+  }
+}
+
+.mCSB_dragger_bar {
+  background-color: #1d7fe0 !important;
+}
+
+select {
+  display: none;
+}

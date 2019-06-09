@@ -1,0 +1,105 @@
+.faq {
+  &__header {
+    color: #010101;
+    font-size: 32px;
+    line-height: 1;
+    margin: 0 0 30px;
+
+    @include smallDown {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__list {
+    margin-bottom: 60px;
+    @include smallDown {
+      margin-bottom: 20px;
+    }
+    .panel {
+      padding: 20px 0 20px 40px;
+      border-bottom: 1px solid #cccccc;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      @include smallDown {
+        padding-left: 20px;
+      }
+      .panel__header {
+        font-size: 24px;
+        line-height: 1;
+
+        a {
+          position: relative;
+          display: block;
+          color: #010101;
+          text-decoration: none;
+          user-select: none;
+
+
+
+          &::before {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            left: -40px;
+            top: 50%;
+            margin-top: -5px;
+            transform: rotate(135deg);
+            border-top: 2px solid #010101;
+            border-right: 2px solid #010101;
+            transition: .25s ease-in-out;
+
+            @include smallDown {
+              left: -20px;
+              width: 6px;
+              height: 6px;
+              border-top: 1px solid #010101;
+              border-right: 1px solid #010101;
+              margin-top: -3px;
+            }
+          }
+
+          &.collapsed {
+            color: #010101;
+            transition: .15s ease-in-out;
+
+            &:hover {
+              color: #1d7fe0;
+            }
+            &:before {
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
+      .panel__body {
+        transition: .25s ease-in-out;
+        height: 0;
+        opacity: 0;
+
+        &.in {
+          opacity: 1;
+          height: auto;
+        }
+
+        &--text {
+          padding-top: 15px;
+
+          p:last-child {margin: 0;}
+        }
+      }
+    }
+  }
+}
+
+.collapse {
+  display: none;
+
+  &.in {
+    display: block;
+  }
+}

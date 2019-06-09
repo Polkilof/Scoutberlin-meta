@@ -1,0 +1,236 @@
+.basket {
+  &__header {
+    margin: 0 0 30px;
+    font-size: 32px;
+    line-height: 1;
+    color: #010101;
+  }
+
+  &__directory {
+    background: #ffffff url(../img/dots-grey-h.png) repeat-Y center right;
+    padding: 40px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+
+    &--title {
+      width: 100%;
+      color: #010101;
+      font-size: 24px;
+      line-height: 1;
+      margin-bottom: 40px;
+    }
+
+    &--period {width: 50%;}
+    &--summ {width: 50%;}
+
+    &--period, &--summ {
+      flex: none;
+
+      small {
+        display: block;
+        font-size: 12px;
+        line-height: 1;
+        text-transform: uppercase;
+        color: #666666;
+        margin-bottom: 10px;
+      }
+
+      span {
+        font-size: 48px;
+        line-height: 1;
+        color: #010101;
+      }
+    }
+
+    &--info {
+      margin-bottom: 30px;
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+          padding: 5px 0;
+          font-size: 16px;
+          line-height: 21px;
+          color: #666666;
+          border-bottom: 1px solid #cccccc;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          strong {
+            font-weight: 400;
+            color: #010101;
+          }
+        }
+      }
+    }
+
+    @include medium {
+      padding: 40px 20px;
+      &--period {width: 65%;}
+      &--summ {width: 35%;}
+    }
+
+    @include smallDown {
+      padding: 20px;
+      &--period, &--summ {
+        width: 100%;
+      }
+
+      &--period {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__ads {
+    background: #ffffff url(../img/dots-grey-h.png) repeat-Y center right;
+    padding: 40px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+
+    &--title {
+      width: 100%;
+      color: #010101;
+      font-size: 24px;
+      line-height: 1;
+      margin-bottom: 40px;
+    }
+
+    &--value, &--period {width: 60%;}
+    &--summ {width: 40%;}
+
+    &--separator {
+      display: block;
+      width: 100%;
+      height: 30px;
+    }
+
+    &--value, &--period, &--summ {
+      flex: none;
+
+      small {
+        display: block;
+        font-size: 12px;
+        line-height: 1;
+        text-transform: uppercase;
+        color: #666666;
+        margin-bottom: 10px;
+      }
+
+      span {
+        font-size: 48px;
+        line-height: 1;
+        color: #010101;
+      }
+    }
+
+    &.promotion {
+      .basket__ads--value, .basket__ads--period, .basket__ads--summ {
+        span {
+          font-size: 32px;
+        }
+      }
+    }
+
+    &--info {
+      margin-bottom: 30px;
+    }
+
+    @include medium {
+      padding: 40px 20px;
+      &--value span, &--period span, &--summ span {font-size: 32px;}
+      &--value {width: 70%;}
+      &--summ {width: 30%;}
+
+      &.promotion {
+        .basket__ads--value, .basket__ads--period, .basket__ads--summ {
+          span {font-size: 28px;}
+        }
+      }
+    }
+
+    @include smallDown {
+      padding: 20px;
+      &--value, &--period, &--summ {
+        width: 100%;
+      }
+
+      &--separator {
+        height: 20px;
+      }
+
+      &--value, &--period {
+        margin-bottom: 20px;
+      }
+
+      &.promotion {
+        .basket__ads--summ {
+          width: 40%;
+        }
+        .basket__ads--period, .basket__ads--value {
+          width: 60%;
+        }
+        .basket__ads--value, .basket__ads--period, .basket__ads--summ {
+          span {font-size: 24px;}
+        }
+      }
+    }
+  }
+
+  &__payment {
+    padding: 0 0 0 30px;
+    margin-bottom: 30px;
+
+    &--header {
+      font-size: 24px;
+      line-height: 1;
+      color: #010101;
+      margin: 0 0 15px;
+    }
+
+    &--item {
+      margin-bottom: 30px;
+
+      input {
+        display: none;
+      }
+
+      label {
+        display: block;
+        cursor: pointer;
+        background-color: #ffffff;
+        border: 2px solid #ffffff;
+        overflow: hidden;
+
+        img {
+          display: block;
+          margin: 0 auto;
+          max-width: 100%;
+        }
+
+        &:hover {
+          border-color: #1d7fe0;
+        }
+      }
+
+      input:checked + label {
+        border-color: #1d7fe0;
+      }
+    }
+
+    .btn.blue {
+      padding: 20px 40px;
+    }
+
+    @include tabletDown {
+      padding: 0;
+    }
+  }
+}

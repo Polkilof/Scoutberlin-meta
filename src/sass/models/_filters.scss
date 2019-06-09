@@ -1,0 +1,257 @@
+.catalog__filter {
+  background-color: #ffffff;
+  padding-top: 30px;
+  margin-bottom: 30px;
+
+  &--block {
+    padding: 0 30px 30px;
+
+    h4 {
+      color: #010101;
+      font-size: 24px;
+      line-height: 1.1;
+      padding: 0;
+      margin: 0 0 15px;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin-bottom: 10px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        a {
+          text-decoration: none;
+          color: #666666;
+
+          &:hover,
+          &.active {
+            color: #1d7fe0;
+          }
+        }
+
+        &.parent ul.child {
+          font-size: 14px;
+          padding-left: 15px;
+          padding-top: 5px;
+          display: none;
+        }
+        &.parent.open ul.child {
+          display: block;
+        }
+        &.parent.open [data-toggle='submenu'] {
+          color: #1d7fe0;
+        }
+      }
+    }
+
+    .inline_inputs {
+      display: flex;
+      align-items: center;
+
+      input {
+        display: block;
+        min-width: 0;
+        width: 50%;
+        background-color: #f2f2f1;
+        color: #010101;
+        border: none;
+        box-shadow: none !important;
+        padding: 0 15px;
+        height: 50px;
+        font-size: 12px;
+        text-transform: uppercase;
+        line-height: 1;
+
+        &:first-child {
+          margin-right: 15px;
+        }
+        &::last-child {
+          margin-left: 15px;
+        }
+
+        &::-webkit-input-placeholder {
+          color: #cccccc;
+        }
+        &::-moz-placeholder {
+          color: #cccccc;
+        }
+        &:-ms-input-placeholder {
+          color: #cccccc;
+        }
+        &:-moz-placeholder {
+          color: #cccccc;
+        }
+      }
+    }
+  }
+
+  @include smallDown {
+    display: none;
+
+    &.show {
+      display: block;
+    }
+  }
+}
+
+[data-filters='catalog'] {
+  display: none;
+  margin-bottom: 30px;
+  background-color: #ffffff;
+  border: none;
+  width: 100%;
+  border-bottom: 1px solid #f2f2f1;
+  font-size: 12px;
+  color: #666666;
+  text-transform: uppercase;
+  line-height: 20px;
+  padding: 10px;
+
+  &.active {
+    background: #1d7fe0;
+    color: #fff;
+    margin-bottom: 0;
+  }
+
+  @include smallDown {
+    display: block;
+  }
+}
+
+.checkbox {
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+  input {
+    display: none;
+
+    + label {
+      cursor: pointer;
+      color: #666666;
+      font-size: 12px;
+      line-height: 1;
+      text-transform: uppercase;
+      user-select: none;
+      display: flex;
+      align-items: center;
+
+      svg {
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-color: transparent;
+        border: 2px solid #1d7fe0;
+        fill: none;
+        stroke: transparent;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        margin-right: 10px;
+        transition: 0.25s ease-in-out;
+      }
+
+      span {
+        display: block;
+        flex: 1;
+      }
+
+      small {
+        display: block;
+        background-color: #f2f2f1;
+        border-radius: 4px;
+        font-size: 12px;
+        line-height: 22px;
+        color: #666666;
+        margin-left: 10px;
+        padding: 0 0.64em;
+      }
+
+      &:hover {
+        color: #1d7fe0;
+      }
+    }
+
+    &:checked + label {
+      svg {
+        background: #1d7fe0;
+        stroke: #ffffff;
+      }
+    }
+  }
+}
+
+.radio {
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+  input {
+    display: none;
+
+    + label {
+      cursor: pointer;
+      color: #666666;
+      font-size: 12px;
+      line-height: 1;
+      text-transform: uppercase;
+      user-select: none;
+      display: flex;
+      align-items: center;
+
+      svg {
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-color: #ffffff;
+        border: 2px solid #1d7fe0;
+        fill: none;
+        stroke: #fff;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        margin-right: 10px;
+        transition: 0.25s ease-in-out;
+      }
+
+      span {
+        display: block;
+        flex: 1;
+      }
+
+      small {
+        display: block;
+        background-color: #f2f2f1;
+        border-radius: 4px;
+        font-size: 12px;
+        line-height: 22px;
+        color: #666666;
+        margin-left: 10px;
+        padding: 0 0.64em;
+      }
+
+      &:hover {
+        color: #1d7fe0;
+      }
+    }
+
+    &:checked + label {
+      svg {
+        background: #1d7fe0;
+      }
+    }
+
+    &:checked + label + input {
+      display: block;
+    }
+  }
+}

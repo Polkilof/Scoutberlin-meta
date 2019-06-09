@@ -1,0 +1,667 @@
+.company {
+  &__header {
+    display: flex;
+    margin-bottom: 30px;
+
+    &--logo {
+      flex: none;
+      padding-right: 30px;
+      width: 130px;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    &--info {
+      .company--title {
+        font-size: 32px;
+        line-height: 1;
+        color: #010101;
+        margin-bottom: 10px;
+      }
+
+      .company--stats {
+        font-size: 0;
+
+        &__item {
+          display: inline-block;
+          line-height: 1;
+          vertical-align: middle;
+          font-size: 16px;
+          line-height: 21px;
+          color: #666666;
+          margin-right: 30px;
+          white-space: nowrap;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          svg,
+          span {
+            display: inline-block;
+            line-height: 1;
+            vertical-align: middle;
+          }
+
+          svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+
+    &--controls {
+      display: flex;
+      flex: none;
+      padding: 10px 0 0 30px;
+
+      a {
+        display: block;
+        flex: none;
+        color: #666666;
+        text-decoration: none;
+        margin-right: 30px;
+
+        &:hover {
+          color: #1d7fe0;
+        }
+
+        svg {
+          display: block;
+          width: 16px;
+          height: 16px;
+          fill: currentColor;
+        }
+
+        &.star {
+          svg {
+            fill: none;
+          }
+          &:hover svg {
+            fill: #f1cc1f !important;
+            color: #f1cc1f !important;
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    @include smallDown {
+      display: block;
+
+      &--logo {
+        margin: 0 0 10px;
+      }
+
+      &--controls {
+        padding: 15px 0;
+      }
+    }
+  }
+
+  &__services {
+    margin-bottom: 30px;
+
+    &--header {
+      color: #010101;
+      font-size: 24px;
+      line-height: 1;
+      margin: 0 0 21px;
+    }
+
+    &--list {
+      font-size: 16px;
+      line-height: 21px;
+      margin: 0 0 21px;
+      padding: 0;
+      list-style: none;
+
+      li {
+        a {
+          color: #666666;
+          text-decoration: none;
+
+          &:hover {
+            color: #1d7fe0;
+          }
+        }
+      }
+    }
+  }
+
+  &__video {
+    max-width: 100%;
+    width: 570px;
+    margin: 0 0 21px;
+
+    @include mediumDown {
+      width: 100%;
+    }
+
+    .video--wraper {
+      width: 100%;
+      height: 0;
+      position: relative;
+      padding-top: 56.25%;
+
+      iframe {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+      }
+    }
+  }
+
+  &__gallery {
+    margin-bottom: 21px;
+
+    [data-carousel='gallery'] {
+      .owl-nav {
+        button {
+          position: absolute;
+          width: 40px;
+          height: 40px;
+          padding: 8px !important;
+          color: #ffffff;
+          top: 50%;
+          margin-top: -12px;
+          opacity: 0.5;
+
+          &:hover {
+            opacity: 1;
+          }
+
+          &.owl-prev {
+            left: 0;
+          }
+
+          &.owl-next {
+            right: 0;
+          }
+
+          svg {
+            display: block;
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+            margin: 0;
+          }
+        }
+      }
+
+      a {
+        display: block;
+        background-color: #1d7fe0;
+        overflow: hidden;
+
+        img {
+          transition: 0.25s ease-in-out;
+        }
+
+        &:hover {
+          img {
+            opacity: 0.5;
+            filter: grayscale(1);
+            transform: scale(1.25);
+          }
+        }
+      }
+    }
+  }
+
+  &__panel {
+    padding: 30px;
+    margin-bottom: 21px;
+    background-color: #ffffff;
+
+    &--item {
+      margin-bottom: 15px;
+      font-size: 16px;
+      line-height: 21px;
+      color: #666666;
+
+      &.controls {
+        margin-bottom: 0;
+        .btn {
+          margin-bottom: 30px;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .item--label {
+        color: #010101;
+      }
+
+      span {
+        display: block;
+      }
+
+      &.phone {
+        span {
+          display: inline-block;
+          font-size: 20px;
+          line-height: 1;
+          vertical-align: middle;
+          color: #1d7fe0;
+        }
+
+        a {
+          display: inline-block;
+          font-size: 12px;
+          line-height: 1;
+          vertical-align: middle;
+          text-transform: uppercase;
+          text-decoration: none;
+          color: #666666;
+          margin-left: 10px;
+          padding-top: 5px;
+
+          &:hover {
+            color: #010101;
+          }
+        }
+      }
+
+      &.site {
+        a {
+          text-decoration: none;
+          color: #1d7fe0;
+          word-wrap: break-word;
+          word-break: break-all;
+
+          &:hover {
+            color: #010101;
+          }
+        }
+        span {
+          font-size: 14px;
+        }
+      }
+    }
+
+    #company_map {
+      width: 100%;
+      height: 285px;
+    }
+
+    @include smallDown {
+      padding: 30px 15px 15px;
+    }
+
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      &--item {
+        width: 50%;
+
+        &:nth-child(even) {
+          padding-right: 15px;
+        }
+
+        &:nth-child(odd) {
+          padding-left: 15px;
+        }
+
+        &.controls {
+          width: 100%;
+          padding: 0;
+        }
+      }
+
+      .map--container {
+        width: 100%;
+      }
+    }
+  }
+
+  &__comments {
+    padding-top: 30px;
+
+    &--header {
+      font-size: 24px;
+      line-height: 1;
+      color: #010101;
+      margin-bottom: 30px;
+
+      .counter {
+        display: inline-block;
+        font-size: 0;
+        line-height: 1;
+        vertical-align: text-bottom;
+        padding-left: 15px;
+        color: #666666;
+        white-space: nowrap;
+        padding-bottom: 5px;
+
+        span,
+        svg {
+          display: inline-block;
+          line-height: 1;
+          vertical-align: middle;
+        }
+
+        svg {
+          width: 16px;
+          height: 16px;
+          fill: currentColor;
+          margin-right: 5px;
+        }
+
+        span {
+          font-size: 16px;
+        }
+      }
+      @include smallDown {
+        margin-bottom: 15px;
+      }
+    }
+
+    &--form {
+      background-color: #ffffff;
+      margin: 0 0 30px;
+      padding: 20px;
+      display: flex;
+
+      .form--input {
+        flex: 1;
+        padding-right: 30px;
+
+        textarea {
+          background-color: #ffffff;
+          border: none;
+          width: 100%;
+          height: 50px;
+          resize: none;
+          padding: 5px 0;
+          font-size: 12px;
+          line-height: 15px;
+          color: #010101;
+
+          &::-webkit-input-placeholder {
+            color: rgba(#010101, 0.4);
+            font-size: 12px;
+            line-height: 15px;
+            text-transform: uppercase;
+          }
+          &::-moz-placeholder {
+            color: rgba(#010101, 0.4);
+            font-size: 12px;
+            line-height: 15px;
+            text-transform: uppercase;
+          }
+          &:-ms-input-placeholder {
+            color: rgba(#010101, 0.4);
+            font-size: 12px;
+            line-height: 15px;
+            text-transform: uppercase;
+          }
+          &:-moz-placeholder {
+            color: rgba(#010101, 0.4);
+            font-size: 12px;
+            line-height: 15px;
+            text-transform: uppercase;
+          }
+        }
+      }
+
+      .form--control {
+        .btn.blue {
+          padding: 22px 30px;
+        }
+      }
+
+      .form--rating {
+        flex: none;
+        padding-right: 30px;
+        padding-top: 5px;
+
+        &__label {
+          font-size: 12px;
+          line-height: 15px;
+          text-transform: uppercase;
+          color: rgba(#010101, 0.6);
+          margin-bottom: 10px;
+        }
+      }
+
+      .rating-stars {
+        display: inline-flex;
+        flex-direction: row-reverse;
+        align-items: center;
+
+        input[type='radio'] {
+          display: none;
+        }
+
+        label {
+          display: block;
+          color: #cccccc;
+          transition: 0.25s ease-in-out;
+          cursor: pointer;
+          padding: 0 4px;
+
+          &[data-value='5'] {
+            padding-right: 0;
+          }
+
+          &[data-value='1'] {
+            padding-left: 0;
+          }
+
+          svg {
+            display: block;
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2px;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+          }
+        }
+
+        label:hover,
+        label:focus,
+        label:hover ~ label,
+        label:focus ~ label,
+        input[type='radio']:checked ~ label {
+          color: #f1cc1f;
+        }
+
+        label:hover svg,
+        label:focus svg,
+        label:hover ~ label svg,
+        label:focus ~ label svg,
+        input[type='radio']:checked ~ label svg {
+          fill: currentColor;
+          stroke: currentColor;
+        }
+      }
+
+      @include tabletDown {
+        flex-wrap: wrap;
+        .form--input {
+          padding: 0 0 10px;
+          margin: 0 0 10px;
+          width: 100%;
+          flex: none;
+          border-bottom: 1px solid #ccc;
+        }
+        .form--rating {
+          flex: 1;
+        }
+      }
+
+      @include smallDown {
+        display: block;
+        .form--rating {
+          padding: 15px 0;
+        }
+      }
+    }
+
+    &--list {
+      .comment {
+        border-bottom: 1px solid #cccccc;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        display: flex;
+        font-size: 16px;
+        line-height: 21px;
+        color: #010101;
+
+        &:last-child {
+          border-bottom: none;
+
+          @include smallDown {
+            margin-bottom: 0;
+          }
+        }
+
+        &__header {
+          flex: none;
+          width: 33.333333333%;
+          padding-right: 15px;
+
+          &--date {
+            opacity: 0.2;
+          }
+
+          &--rate {
+            padding: 10px 0;
+            letter-spacing: 0.025em;
+            white-space: nowrap;
+            color: #cccccc;
+
+            svg {
+              display: inline-block;
+              line-height: 1;
+              vertical-align: middle;
+              width: 20px;
+              height: 20px;
+              fill: none;
+              stroke: currentColor;
+              stroke-width: 2px;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+            }
+
+            &[data-value='5'] svg {
+              fill: #f1cc1f;
+              stroke: #f1cc1f;
+            }
+
+            &[data-value='4'] {
+              svg:nth-child(1),
+              svg:nth-child(2),
+              svg:nth-child(3),
+              svg:nth-child(4) {
+                fill: #f1cc1f;
+                stroke: #f1cc1f;
+              }
+            }
+
+            &[data-value='3'] {
+              svg:nth-child(1),
+              svg:nth-child(2),
+              svg:nth-child(3) {
+                fill: #f1cc1f;
+                stroke: #f1cc1f;
+              }
+            }
+
+            &[data-value='2'] {
+              svg:nth-child(1),
+              svg:nth-child(2) {
+                fill: #f1cc1f;
+                stroke: #f1cc1f;
+              }
+            }
+
+            &[data-value='1'] {
+              svg:nth-child(1) {
+                fill: #f1cc1f;
+                stroke: #f1cc1f;
+              }
+            }
+          }
+        }
+
+        &__body {
+          flex: 1;
+          padding-left: 15px;
+          color: #666666;
+
+          &--edit {
+            text-align: right;
+            padding-top: 15px;
+            margin-bottom: -15px;
+
+            .delete--comment {
+              font-size: 0;
+              line-height: 21px;
+              color: #d8232a;
+              text-decoration: none;
+              white-space: nowrap;
+              background-color: transparent;
+              border: none;
+              cursor: pointer;
+
+              &:hover {
+                color: #010101;
+              }
+
+              svg,
+              span {
+                display: inline-block;
+                line-height: 1;
+                vertical-align: middle;
+              }
+
+              svg {
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+                fill: currentColor;
+              }
+
+              span {
+                font-size: 12px;
+                text-transform: uppercase;
+                padding-top: 2px;
+              }
+            }
+          }
+        }
+
+        @include smallDown {
+          display: block;
+
+          &__header {
+            padding: 0 0 15px;
+            width: 100%;
+          }
+          &__body {
+            width: 100%;
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}

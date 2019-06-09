@@ -1,0 +1,176 @@
+// Media Query Ranges //
+  $xs-screen: 480px !default;  //Small Screen:		481x768;
+  $sm-screen: 768px !default;  //Tablet Screen:		769x960;
+  $md-screen: 960px !default;  //Medium Screen:		961x1240;
+  $lg-screen: 1240px !default;  //Large Screen:		1241x ~ ;
+
+// Media Breakpoints //
+  // Helper respond UP //
+    @mixin tabletUp {
+      @media only screen and (min-width: #{$sm-screen + 1}) {
+        @content;
+      }
+    }
+
+    @mixin mediumUp {
+      @media only screen and (min-width: #{$md-screen + 1}) {
+        @content;
+      }
+    }
+  // Helper respond DOWN //
+    @mixin smallDown {
+      @media only screen and ( max-width: #{$sm-screen} ) {
+        @content;
+      }
+    }
+
+    @mixin tabletDown {
+      @media only screen and (max-width: #{$md-screen}) {
+        @content;
+      }
+    }
+    
+    @mixin mediumDown {
+      @media only screen and (max-width: #{$lg-screen}) {
+        @content;
+      }
+    }
+
+  // DEFAULTS //
+
+    @mixin mobile {
+      @media only screen and ( min-width: #{$xs-screen + 1} ) and ( max-width: #{$sm-screen} ) {
+        @content;
+      }
+    }
+
+    @mixin tablet {
+      @media only screen and ( min-width: #{$sm-screen + 1} ) and (max-width: #{$md-screen}) {
+        @content;
+      }
+    }
+
+    @mixin medium {
+      @media only screen and ( min-width: #{$md-screen + 1} ) and (max-width: #{$lg-screen}) {
+        @content;
+      }
+    }
+
+    @mixin large {
+      @media only screen and ( min-width: #{$lg-screen + 1} ) {
+        @content;
+      }
+    }
+// END BreakPoints DEMO: @include [name of breakpoint] { ... styles ... } //
+
+
+// Grid //
+$num-cols: 12 !default;
+$gutter: 30px !default;
+
+// Grid Layout
+.container {
+  margin: 0 auto;
+  padding: 0 ($gutter/2);
+  width: 100%;
+  box-sizing: border-box;
+
+  @include tablet   {width: $sm-screen - $gutter;}
+  @include medium   {width: $md-screen - $gutter;}
+  @include large    {width: $lg-screen - $gutter;}
+}
+
+.row {
+  margin-left: ($gutter / -2);
+  margin-right: ($gutter / -2);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  padding: 0 ($gutter / 2);
+  margin: 0;
+  position: relative;
+  flex-basis:100%;
+  max-width: 100%;
+  -ms-flex-preferred-size: 100%;
+
+  $i: 1;
+  @while $i <= $num-cols {
+    $perc: unquote((100 / ($num-cols / $i)) + "%");
+    &.xs-#{$i} {
+      flex-basis: $perc;
+      max-width: $perc;
+      -ms-flex-preferred-size: $perc;
+    }
+    $i: $i + 1;
+  }
+  $i: 1;
+  @while $i <= $num-cols {
+    $perc: unquote((100 / ($num-cols / $i)) + "%");
+    &.offset-xs-#{$i} {margin-left: $perc;}
+    $i: $i + 1;
+  }
+
+  /*** TABLET and UP ***/
+    @include tabletUp {
+      $i: 1;
+      @while $i <= $num-cols {
+        $perc: unquote((100 / ($num-cols / $i)) + "%");
+        &.sm-#{$i} {
+          flex-basis: $perc;
+          max-width: $perc;
+          -ms-flex-preferred-size: $perc;
+        }
+        $i: $i + 1
+      }
+      $i: 1;
+      @while $i <= $num-cols {
+        $perc: unquote((100 / ($num-cols / $i)) + "%");
+        &.offset-sm-#{$i} {margin-left: $perc;}
+        $i: $i + 1;
+      }
+    }
+
+  // NORMAL and UP //
+    @include mediumUp {
+      $i: 1;
+      @while $i <= $num-cols {
+        $perc: unquote((100 / ($num-cols / $i)) + "%");
+        &.md-#{$i} {
+          flex-basis: $perc;
+          max-width: $perc;
+          -ms-flex-preferred-size: $perc;
+        }
+        $i: $i + 1;
+      }
+      $i: 1;
+      @while $i <= $num-cols {
+        $perc: unquote((100 / ($num-cols / $i)) + "%");
+        &.offset-md-#{$i} {margin-left: $perc;}
+        $i: $i + 1;
+      }
+      &.offset-md-0 {margin-left: 0;}
+    }
+
+  // LARGE and UP //
+    @include large {
+      $i: 1;
+      @while $i <= $num-cols {
+        $perc: unquote((100 / ($num-cols / $i)) + "%");
+        &.lg-#{$i} {
+          flex-basis: $perc;
+          max-width: $perc;
+          -ms-flex-preferred-size: $perc;
+        }
+        $i: $i + 1;
+      }
+      $i: 1;
+      @while $i <= $num-cols {
+        $perc: unquote((100 / ($num-cols / $i)) + "%");
+        &.offset-lg-#{$i} {margin-left: $perc;}
+        $i: $i + 1;
+      }
+    }
+
+}
