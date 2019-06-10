@@ -23,6 +23,13 @@
 		}
 	}
 }
+.popup__button{
+	.btn{
+		+ .btn{
+			margin-top: 1px;
+		}
+	}
+}
 .news__catalog{
 	.catalog__grid--item{
 		margin-bottom: 0;

@@ -8327,6 +8327,9 @@ yx-axis
     .base__header--navbar .navbar--button.type2 .btn + .btn {
       margin-left: 1px; }
 
+.popup__button .btn + .btn {
+  margin-top: 1px; }
+
 .news__catalog .catalog__grid--item {
   margin-bottom: 0; }
 
