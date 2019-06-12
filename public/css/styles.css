@@ -4073,7 +4073,6 @@ img.mfp-img {
     right: 0;
     bottom: 0;
     padding: 15px;
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, black 100%);
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(black));
     background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, black 100%);
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 100%);
@@ -7796,7 +7795,6 @@ img.mfp-img {
           content: '';
           pointer-events: none;
           /* не блокировать скролл */
-          background: -webkit-linear-gradient(top, rgba(242, 242, 241, 0) 0%, #f2f2f1 100%);
           background: -webkit-gradient(linear, left top, left bottom, from(rgba(242, 242, 241, 0)), to(#f2f2f1));
           background: -o-linear-gradient(top, rgba(242, 242, 241, 0) 0%, #f2f2f1 100%);
           background: linear-gradient(to bottom, rgba(242, 242, 241, 0) 0%, #f2f2f1 100%);
@@ -8297,6 +8295,68 @@ yx-axis
 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
   background-color: #1d7fe0; }
 
+.cookies__alert {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  z-index: 333;
+  width: 724px;
+  margin-left: -362px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .cookies__alert--text {
+    display: block;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    padding-right: 20px;
+    font-size: 16px;
+    line-height: 1.2;
+    color: #666666; }
+    .cookies__alert--text a {
+      text-decoration: underline;
+      color: #1d7fe0; }
+      .cookies__alert--text a:hover {
+        color: #101010; }
+  .cookies__alert--button {
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none; }
+    .cookies__alert--button .btn.blue {
+      display: block;
+      width: 100%;
+      height: 40px;
+      padding: 10px 30px; }
+      .cookies__alert--button .btn.blue span {
+        font-size: 16px;
+        text-transform: none;
+        font-weight: 400; }
+  @media only screen and (max-width: 768px) {
+    .cookies__alert {
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      margin: 0; } }
+  @media only screen and (max-width: 480px) {
+    .cookies__alert {
+      display: block; }
+      .cookies__alert--text {
+        padding: 0 0 20px; } }
+
+.mCSB_dragger_bar {
+  background-color: #1d7fe0 !important; }
+
+select {
+  display: none; }
+
 /* change 90.06.2019 */
 .base__header--navbar .navbar--search .btn {
   padding: 20px 10px; }
@@ -8514,66 +8574,5 @@ yx-axis
   margin-bottom: 15px; }
 
 /* end change 90.06.2019 */
-.cookies__alert {
-  position: fixed;
-  bottom: 80px;
-  left: 50%;
-  z-index: 333;
-  width: 724px;
-  margin-left: -362px;
-  background-color: #ffffff;
-  -webkit-box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
-  .cookies__alert--text {
-    display: block;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    padding-right: 20px;
-    font-size: 16px;
-    line-height: 1.2;
-    color: #666666; }
-    .cookies__alert--text a {
-      text-decoration: underline;
-      color: #1d7fe0; }
-      .cookies__alert--text a:hover {
-        color: #101010; }
-  .cookies__alert--button {
-    -webkit-box-flex: 0;
-        -ms-flex: none;
-            flex: none; }
-    .cookies__alert--button .btn.blue {
-      display: block;
-      width: 100%;
-      height: 40px;
-      padding: 10px 30px; }
-      .cookies__alert--button .btn.blue span {
-        font-size: 16px;
-        text-transform: none;
-        font-weight: 400; }
-  @media only screen and (max-width: 768px) {
-    .cookies__alert {
-      width: 100%;
-      left: 0;
-      bottom: 0;
-      margin: 0; } }
-  @media only screen and (max-width: 480px) {
-    .cookies__alert {
-      display: block; }
-      .cookies__alert--text {
-        padding: 0 0 20px; } }
-
-.mCSB_dragger_bar {
-  background-color: #1d7fe0 !important; }
-
-select {
-  display: none; }
 
 /*# sourceMappingURL=styles.css.map */
