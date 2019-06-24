@@ -3720,6 +3720,10 @@ img.mfp-img {
   color: #ffffff;
   text-decoration: none;
   overflow: hidden; }
+  @media only screen and (max-width: 768px) {
+    .banner__item {
+      margin-left: -15px;
+      margin-right: -15px; } }
   .banner__item img {
     position: relative;
     display: block;
@@ -8561,7 +8565,7 @@ select {
   .banner__group [data-carousel='banner'] a {
     display: block;
     overflow: hidden;
-    margin-bottom: 0px; }
+    margin: 0; }
 
 .create__advert h3 {
   font-size: 24px;
